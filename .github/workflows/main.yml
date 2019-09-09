@@ -1,0 +1,103 @@
+name: Main
+
+on: push
+
+jobs:
+  CodeStyle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Rust
+        uses: hecrj/setup-rust-action@v1
+        with:
+          components: rustfmt
+      - uses: actions/checkout@v1
+      - run: cargo fmt --all -- --check
+
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Rust
+        uses: hecrj/setup-rust-action@v1
+        with:
+          components: clippy
+      - uses: actions/checkout@v1
+      - run: cargo clippy --all-targets --all-features -- -D clippy::all
+
+  Compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Rust
+        uses: hecrj/setup-rust-action@v1
+      - uses: actions/checkout@master
+      - run: cargo check --all
+
+  Test:
+    needs: [CodeStyle, Lint, Compile]
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+        rust: [stable, beta, nightly]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Setup Rust
+      uses: hecrj/setup-rust-action@v1
+      with:
+        rust-version: ${{ matrix.rust }}
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Test
+      run: cargo test --verbose
+
+  Release:
+    needs: [Test]
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest, windows-latest]
+        include:
+          - os: ubuntu-latest
+            rust: stable
+            target: x86_64-unknown-linux-musl
+            bin: rust-bin
+            name: rust-bin-Linux-x86_64.tar.gz
+          - os: windows-latest
+            rust: stable
+            target: x86_64-pc-windows-msvc
+            bin: rust-bin.exe
+            name: rust-bin-Windows-x86_64.zip
+          - os: macOS-latest
+            rust: stable
+            target: x86_64-apple-darwin
+            bin: rust-bin
+            name: rust-bin-Darwin-x86_64.tar.gz
+    runs-on: ${{ matrix.os }}
+    steps:
+    - name: Setup Rust
+      uses: hecrj/setup-rust-action@master
+      with:
+        rust-version: ${{ matrix.rust }}
+    - name: Configure Rustup
+      run: rustup target add ${{ matrix.target }}
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Build
+      run: cargo build --release --target ${{ matrix.target }}
+    - name: Package
+      shell: bash
+      run: |
+        strip target/${{ matrix.target }}/release/${{ matrix.bin }}
+        cd target/${{ matrix.target }}/release
+        if [[ "${{ matrix.os }}" == "windows-latest" ]]
+        then
+          7z a ../../../${{ matrix.name }} ${{ matrix.bin }}
+        else
+          tar czvf ../../../${{ matrix.name }} ${{ matrix.bin }}
+        fi
+        cd -
+    - name: Publish
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+          files: 'rust-bin*'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
