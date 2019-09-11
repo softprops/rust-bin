@@ -19,6 +19,10 @@
 
 As rewarding of a language as Rust is to program in, it means little if you don't **use it** to improve the lives of others with applications.
 
+* 👩‍🎤 Inspire others to think about increasing Rust's potential reach
+
+There are many ways we could make Rust more accessible to others. This is one way. I'm excited to see others.
+
 ## Non-Goals
 
 * 🚫 😵 Not be complete by default.
