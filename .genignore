@@ -1,0 +1,4 @@
+# do not include instructions for generating project with generated project
+README.md
+# let generated projects generate their own lock file
+Cargo.lock
