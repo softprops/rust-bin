@@ -43,7 +43,7 @@ $ cargo install cargo-generate \
   --features vendored-openssl
 ```
 
-Then generate a new rust bin project with run the following providing a name `--name` option with the name of the binary
+Then generate a new rust bin project with run the following providing a `--name` option with the name of the binary
 you want to generate
 
 ```sh
