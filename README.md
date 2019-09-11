@@ -6,7 +6,7 @@
 </h1>
 
 <div align="center">
-   A recipe for <a href="https://www.rust-lang.org/">Rust</a> bins built, tested, and published with <a href="https://help.github.com/en/categories/automating-your-workflow-with-github-actions">GitHub Actions</a>
+   A recipe for <a href="https://www.rust-lang.org/">Rust</a> bins built, tested, and published with <a href="https://help.github.com/en/categories/automating-your-workflow-with-github-actions">GitHub Actions</a>.
 </div>
 
 <br />
