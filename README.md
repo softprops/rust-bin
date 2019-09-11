@@ -95,7 +95,7 @@ You'll find GitHub is doing the following for you
 * checking your codestyle with rustfmt
 * linting your code with clippy
 * doing a quick compile check
-* running tests against `nightly`, `beta`, `stable` on `linux`, `osx`, and `windows`
+* running tests against Rust channels `nightly`, `beta`, `stable` on `linux`, `osx`, and `windows` virtual hosts
 
 ### Releasing
 
