@@ -76,7 +76,7 @@ Simply click the `Use this template` button on this repository's GitHub page and
 
 Clone your new repository to your local computer.
 
-> **⚠️ Note:** Be sure to edit the `package.name` and `package.authors` in the resulting project's `Cargo.toml` file with the name of the binary you wish to produce and your `{user} <email>` for Crates.io consumption.
+> **⚠️ Note:** Be sure to edit the `package.name` and `package.authors` in the resulting project's `Cargo.toml` file with the name of the binary you wish to produce and your `{user} <email>` for Crates.io consumption. You'll also likely want to remove the `.genignore` and give the repo its own `README.md` file
 
 
 ### Start the action
