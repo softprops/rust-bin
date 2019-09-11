@@ -100,3 +100,10 @@ You can also communicate with the world that you're project is in a stable state
 ```
 
 > **⚠️ Note:** You can extend your GitHub workflow by editing the `.github/workflows/main.yml` file in your project. I you can also create separate workflows for separate GitHub events. Learn more [here](https://help.github.com/en/categories/automating-your-workflow-with-github-actions).
+
+
+## Resources
+
+* [setup-rust action](https://github.com/hecrj/setup-rust-action)
+* [gh-release action](https://github.com/softprops/action-gh-release)
+* [GitHub actions docs](https://help.github.com/en/categories/automating-your-workflow-with-github-actions)
