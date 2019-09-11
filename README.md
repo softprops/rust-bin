@@ -46,7 +46,7 @@ $ cargo generate \
 In your generated project, complete the repository setup process and push to GitHub
 
 ```sh
-git init
+git add .
 git commit -m "init to winit"
 git remote add origin git@github.com:{you}/{my-awesome-rust-bin}.git
 git push -u origin master
@@ -59,9 +59,18 @@ your invite you should find GitHub already going to work for you on your first `
 https://github.com/{you}/{my-awesome-rust-bin}/actions
 ```
 
-You'll notice this workflow ends with a publish step but does not actually publishing anything yet.
+> **⚠️ Note:** This may take a few seconds on the first push. GitHub will take a few seconds to register push events with your newly provided workflow.
 
-The reason why is that you typically only want to publish a release by [tagging](https://git-scm.com/book/en/v2/Git-Basics-Tagging) a release.
+You'll find GitHub is doing the following for you
+
+* checking your codestyle with rustfmt
+* linting your code with clippy
+* doing a quick compile check
+* running tests against `nightly`, `beta`, `stable` on `linux`, `osx`, and `windows`
+
+You'll notice this workflow ends with a publish step but does **not** actually publishing anything yet.
+
+The reason why is that you typically only want to publish a release with a [git tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging).
 
 Let's try that.
 
@@ -78,8 +87,8 @@ You can find your GitHub releases here.
 https://github.com/{you}/{my-awesome-rust-bin}/releases
 ```
 
-You should find 3 assets attached to your GitHub release. One for `linux`, one for `OSX`, and one for `windows`. Download the one for the type of operating system you are using by clicking the link.
+🎁 You should find 3 assets attached to your GitHub release. One for `linux`, one for `OSX`, and one for `windows`. Download the one for the type of operating system you are using by clicking the link.
 
 Unpack the asset locally and run it.
 
-Congradulations. You've just shipped your first release! Now you can share your awesome Rust binaries with all your friends.
+Congradulations. You've just shipped your first release 🚀! Now you can share your awesome Rust binaries with all your friends.
