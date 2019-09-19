@@ -76,8 +76,7 @@ jobs:
       uses: hecrj/setup-rust-action@master
       with:
         rust-version: ${{ matrix.rust }}
-    - name: Configure Rustup
-      run: rustup target add ${{ matrix.target }}
+        components: ${{ matrix.target }}
     - name: Checkout
       uses: actions/checkout@v1
     - name: Build
