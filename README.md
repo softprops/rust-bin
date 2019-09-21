@@ -128,13 +128,13 @@ Unpack the asset locally and run it...
 
 🎉 Congradulations. You've just shipped your first release 🚀! Now you can share your awesome Rust binaries with all your friends.
 
-⭐ You can also communicate with the world that you're project is in a stable state by creating a `README.md` file adding a [workflow badge](https://help.github.com/en/articles/configuring-a-workflow#adding-a-workflow-status-badge-to-your-repository).
+⭐ You can also communicate with the world that your project is in a stable state by creating a `README.md` file adding a [workflow badge](https://help.github.com/en/articles/configuring-a-workflow#adding-a-workflow-status-badge-to-your-repository).
 
 ```
 ![](https://github.com/actions/{you}/{my-awesome-rust-bin}/main/badge.svg)
 ```
 
-> **⚠️ Note:** You can extend your GitHub workflow by editing the `.github/workflows/main.yml` file in your project. I you can also create separate workflows for separate GitHub events. Learn more [here](https://help.github.com/en/categories/automating-your-workflow-with-github-actions).
+> **⚠️ Note:** You can extend your GitHub workflow by editing the `.github/workflows/main.yml` file in your project. You can also create separate workflows for separate GitHub events. Learn more [here](https://help.github.com/en/categories/automating-your-workflow-with-github-actions).
 
 
 ## Resources
