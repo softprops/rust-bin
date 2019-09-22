@@ -78,7 +78,7 @@ This repository is configured to be a GitHub repository template.
 
 Simply click the `Use this template` button on this repository's GitHub page and follow the problems.
 
-Clone your new repository to your local computer and run the `./bootstrap.sh`. This will update some cargo placeholders that `cargo generate` would fill in for you. Commit these and push the changes to GitHub.
+Clone your new repository to your local computer and run the `./bootstrap.sh` script. This will update some cargo placeholders that `cargo generate` would fill in for you. Commit these and push the changes to GitHub.
 
 > **⚠️ Note:**  You will likely also want to update the `README.md` file to reflect your new projects contents.
 
