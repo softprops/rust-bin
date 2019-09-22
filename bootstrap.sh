@@ -23,3 +23,4 @@ cat "$DIR/.github/workflows/main.yml" \
 	> $DIR/Cargo.toml
 
 rm .genignore 2>/dev/null || true
+rm cargo-generate.toml 2>/dev/null || true
