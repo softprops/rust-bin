@@ -2,3 +2,5 @@
 README.md
 # let generated projects generate their own lock file
 Cargo.lock
+# this file is only used for github repo templates contexts
+bootstrap.sh
