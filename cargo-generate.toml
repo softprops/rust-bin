@@ -1,2 +1,2 @@
 [template]
-exclude = ["bootstrap.sh", "README.md"]
+exclude = ["./bootstrap.sh", "./README.md"]
