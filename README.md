@@ -52,7 +52,7 @@ you want to generate
 
 ```sh
 $ cargo generate \
-  --git https://github.com/softprops/rust-bin.git
+  --git https://github.com/softprops/rust-bin.git \
   --name my-awesome-rust-bin
 ```
 
