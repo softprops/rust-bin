@@ -77,6 +77,10 @@ jobs:
       with:
         rust-version: ${{ matrix.rust }}
         targets: ${{ matrix.target }}
+    - name: Setup musl-gcc
+      if: contains(matrix.target, 'musl')
+      run: |
+        sudo apt-get install musl-tools
     - name: Checkout
       uses: actions/checkout@v1
     - name: Build
