@@ -56,8 +56,6 @@ $ cargo generate \
   --name my-awesome-rust-bin
 ```
 
-> **⚠️ Note:** Be sure to edit the `package.name` in the resulting project's `Cargo.toml` file with the name of the binary you wish to produce
-
 
 [Create a new git repository](https://help.github.com/en/articles/create-a-repo) on GitHub.com
 
@@ -82,7 +80,6 @@ Clone your new repository to your local computer and run the `./bootstrap.sh` sc
 
 > **⚠️ Note:**  You will likely also want to update the `README.md` file to reflect your new projects contents.
 
-
 ### Start the action
 
 Assumming you have already [applied for the GitHub Actions beta here](https://github.com/features/actions/signup/) and received
@@ -103,7 +100,7 @@ You'll find GitHub is doing the following for you
 
 ### Releasing
 
-You'll notice this workflow ends with a publish step but does **not** actually publishing anything yet.
+You'll notice this workflow ends with a publish step but does **not** actually publish anything yet.
 
 The reason why is that you typically only want to publish a release with a [git tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging).
 

@@ -19,7 +19,7 @@ cat "$DIR/Cargo.toml" \
 	> $DIR/Cargo.toml
 
 cat "$DIR/.github/workflows/main.yml" \
-	| sed "s/rust-bin/$PROJECT_NAME/g" \
+	| sed "s/project-name/$PROJECT_NAME/g" \
 	> $DIR/Cargo.toml
 
 rm .genignore 2>/dev/null || true
